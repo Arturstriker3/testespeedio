@@ -12,7 +12,7 @@ cd .\testespeedio\
 
 ## Instalação do Projeto
 ```
-npm install
+npm run install
 ```
 
 ### Compilar e rodar Front e Back
