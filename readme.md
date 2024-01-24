@@ -5,14 +5,14 @@
 git clone https://github.com/Arturstriker3/testespeedio.git
 ```
 
-## Instalação do Projeto
-```
-npm install
-```
-
 ## Abrir o teste
 ```
 cd .\testespeedio\ 
+```
+
+## Instalação do Projeto
+```
+npm install
 ```
 
 ### Compilar e rodar Front e Back
