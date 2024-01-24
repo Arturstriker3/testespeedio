@@ -10,6 +10,11 @@ git clone https://github.com/Arturstriker3/testespeedio.git
 npm install
 ```
 
+## Abrir o teste
+```
+cd .\testespeedio\ 
+```
+
 ### Compilar e rodar Front e Back
 ```
 npm run dev
