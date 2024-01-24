@@ -23,7 +23,7 @@ npm run dev
 ### Desafio Técnico: Aplicação de Anotações SpeedIO 
  
  
- Nesse projeto o foco foi desenvolver uma aplicação de anotações com frontend em Vue.js e backend em Ruby ou Node.js. A aplicação deve incluir telas de criar anotações, listar anotações, uma tela vazia sem anotações e um modal de confirmação de deleção. A aplicação final deve ser entregue em tela cheia e ser responsiva, com um menu lateral à esquerda listando as anotações e o restante da tela exibindo a anotação selecionada (programador deve ser criativo, e fazer entrega baseada na identidade visual apresentada).
+ Nesse projeto o foco foi desenvolver uma aplicação de anotações com frontend em Vue.js e backend em Ruby ou Node.js. A aplicação inclui telas de criar anotações, listar anotações, uma tela vazia sem anotações e um modal de confirmação de deleção. A aplicação é ajustada para tela cheia e responsiva em dispositivos menores, sendo um menu lateral à esquerda listando as anotações e o restante da tela exibindo a anotação selecionada.
  
  **O que utilizei**
 * HTML e SCSS;
