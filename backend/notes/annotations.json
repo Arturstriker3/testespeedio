@@ -1,0 +1,26 @@
+{
+  "tokens": [
+    {
+      "id": 1,
+      "token": "tokenTest",
+      "notes": [
+        {
+          "id": 1,
+          "category": "Importante",
+          "potential": "1.000,00",
+          "reminder": "2024-01-24",
+          "text": "Nota Recuperada Predefinida 1",
+          "timestamp": "2024-01-23T17:37:54.576Z"
+        },
+        {
+          "id": 2,
+          "category": "Importante",
+          "potential": "2.000,00",
+          "reminder": "2024-01-24",
+          "text": "Nota Recuperada Predefinida 2",
+          "timestamp": "2024-01-23T17:37:54.576Z"
+        }
+      ]
+    }
+  ]
+}

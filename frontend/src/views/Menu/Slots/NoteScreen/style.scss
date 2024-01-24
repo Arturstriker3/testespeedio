@@ -1,0 +1,577 @@
+@import '@/assets/scss/_main';
+
+* {
+  
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lighten($colorWhite, 5%);
+  transition: background-color 1.0s ease;
+
+  &.toggle-active {
+    background-color: $colorBackground;
+    overflow: hidden;
+  }
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  margin: 30px 10px;
+}
+
+.menu-toggle {
+  display: none;
+  position: fixed;
+  right: 2.1rem;
+  top: 6.9rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: ($colorWhite, 5%);
+  transition: ease-in 1.0s ease;
+  cursor: pointer;
+  z-index: 2;
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    i {
+      color: $colorGray;
+    }
+  }
+}
+
+.sidebar {
+  flex: 1 1 0;
+  max-width: 400px;
+  height: 80vh;
+  padding: 2rem 1rem;
+  background-color: $colorBackground;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  h3 {
+    color: $colorGray;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+  }
+
+  .menu {
+    margin: 0 -1rem;
+    overflow-y: auto;
+    direction: rtl;
+    margin-bottom: 2rem;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: $colorBlack;
+      border-radius: 10px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background-color: $colorBackground;
+      border: 1px solid #cacaca;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 1em;
+      color: $colorWhite;
+      text-decoration: none;
+      transition: 0.25s linear;
+      direction: ltr;
+
+      &:hover,
+      &.is-active {
+        color: $colorGray;
+        border-right: 4px solid $colorGray;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .bgBtn {
+    background-color: $colorBlue;
+    color: $colorWhite;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease;
+
+    i {
+      margin-right: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background-color: darken($colorBlue, 10%);
+      cursor: pointer;
+
+      i {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+.content {
+  flex: 1 1 0;
+  padding: 2rem;
+
+  .cardBox {
+    background-color: $colorBackground;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 80px;
+    padding: 5px 10px;
+
+    h2 {
+      color: $colorBlack;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .contentInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      .contentName {
+        display: flex;
+        align-items: center;
+
+        i {
+          font-size: 25px;
+          margin-right: 0.5rem;
+          color: $colorBlue;
+        }
+
+        h3 {
+          color: $colorBlack;
+          font-size: 20px;
+          margin-right: 0.5rem;
+        }
+      }
+
+      .contentText {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        p {
+          color: $colorGray;
+          font-size: 22px;
+          font-family: 'Raleway', sans-serif;
+          margin-top: 0;
+        }
+      }
+    }
+
+    .noteDate {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    
+      .dateAlign {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        i {
+          color: $colorBlue;
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+          margin: 0 0.4em;
+        }
+    
+        .dateInfo {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          p {
+            color: $colorBlack;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsividade Telas Pequenas
+
+@media (max-width: 1024px) {
+  .sidebar {
+    max-width: 350px;
+
+    .menu {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  
+
+  .sidebar {
+    margin-top: 80px;
+    position: fixed;
+    top: 0;
+    left: -700px;
+    height: 100vh;
+    width: 100%;
+    max-width: 700px;
+    transition: 0.5s linear;
+    overflow: auto;
+
+    &.is-active {
+      left: 0;
+    }
+
+    .menu {
+      margin-bottom: 10rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .bgBtn {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      width: 80%;
+      margin: 20px auto;
+
+      i {
+        margin-right: 8px;
+        transition: transform 0.3s ease;
+      }
+  
+      &:hover {
+        background-color: darken($colorBlue, 10%);
+        cursor: pointer;
+  
+        i {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  
+
+  .sidebar {
+    margin-top: 80px;
+    position: fixed;
+    top: 0;
+    left: -425px;
+    height: 100vh;
+    width: 100%;
+    max-width: 425px;
+    transition: 0.5s linear;
+    overflow: auto;
+
+    &.is-active {
+      left: 0;
+    }
+
+    .menu {
+      margin-bottom: 10rem;
+      margin-left: 0.2rem;
+      margin-right: 10px;
+    }
+
+    .bgBtn {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      width: 80%;
+      margin: 20px auto;
+
+      i {
+        margin-right: 8px;
+        transition: transform 0.3s ease;
+      }
+  
+      &:hover {
+        background-color: darken($colorBlue, 10%);
+        cursor: pointer;
+  
+        i {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  
+
+  .sidebar {
+    margin-top: 80px;
+    position: fixed;
+    top: 0;
+    left: -375px;
+    height: 100vh;
+    width: 100%;
+    max-width: 375px;
+    transition: 0.5s linear;
+    overflow: auto;
+
+    &.is-active {
+      left: 0;
+    }
+
+    .menu {
+      margin-bottom: 10rem;
+      margin-right: 5px;
+    }
+
+    .bgBtn {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      width: 80%;
+      margin: 20px auto;
+
+      i {
+        margin-right: 8px;
+        transition: transform 0.3s ease;
+      }
+  
+      &:hover {
+        background-color: darken($colorBlue, 10%);
+        cursor: pointer;
+  
+        i {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    margin-top: 80px;
+    position: fixed;
+    top: 0;
+    left: -320px;
+    height: 100vh;
+    width: 100%;
+    max-width: 320px;
+    transition: 0.5s linear;
+    overflow: auto;
+
+    &.is-active {
+      left: 0;
+    }
+
+    .menu {
+      margin-bottom: 10rem;
+      margin-right: 10px;
+    }
+
+    .textContainer h3 {
+      font-size: 12px !important;
+    }
+  
+    .textContainer .dateInfo {
+      font-size: 10px !important;
+    }
+
+    .bgBtn {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      width: 80%;
+      margin: 20px auto;
+
+      i {
+        margin-right: 8px;
+        transition: transform 0.3s ease;
+      }
+  
+      &:hover {
+        background-color: darken($colorBlue, 10%);
+        cursor: pointer;
+  
+        i {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    .content {
+      .cardBox {
+        margin: auto;
+      }
+    }
+  }
+}
+
+// MODAL
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  
+  .modal-wrapper {
+      min-width: 300px;
+      padding: 20px 30px;
+      background-color: lighten( $colorWhite, 5%);
+      border-radius: 2px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+      transition: all 0.3s ease;
+      border-radius: 15px;
+
+      .modal-header {
+          margin-top: 0;
+          color: $colorBlack;
+          font-family: 'Roboto', sans-serif;
+          font-size: 19px;
+      }
+
+      .modal-line {
+          margin: 10px 0; /* Espaçamento para a nova linha */
+          border-top: 1px solid #ddd; /* Linha horizontal */
+      }
+
+      .modal-body {
+          margin: 20px 0;
+          font-family: 'Raleway', sans-serif;
+          font-size: 15px;
+      }
+
+      .modal-footer {
+
+          .modal-default-button {
+              float: right;
+              margin-right: 5px;
+              padding: 10px;
+              border-radius: 15px;
+              transition: color 0.5s ease;
+              border: 1px solid $colorBlack;
+          }
+
+          #modal-delete-btn {
+              background-color: $colorRed;
+              font-family: 'Roboto', sans-serif;
+
+              &:hover{
+                  cursor: pointer;
+                  color: rgba($colorBlack, 0.5);
+              }
+          }
+
+          #modal-cancel-btn {
+              margin-right: 15px;
+              background-color: $colorWhite;
+              font-family: 'Roboto', sans-serif;
+
+              &:hover{
+                  cursor: pointer;
+                  color: rgba($colorBlack, 0.8);
+              }
+          }
+      }
+  }   
+}
+
+// Tela Descanso
+
+.restContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+
+  .fa-paperclip {
+      color: $colorGray;
+      font-size: 50px;
+      margin-bottom: 20px;
+  }
+
+  .textCenter {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 30px;
+
+      h3, p {
+          margin: -1px; // Remove todas as margens
+      }
+
+      h3 {
+          color: $colorBlue;
+          font-size: 25px;
+      }
+
+      p {
+          color: $colorGray;
+          font-size: 15px;
+      }
+    }
+  }

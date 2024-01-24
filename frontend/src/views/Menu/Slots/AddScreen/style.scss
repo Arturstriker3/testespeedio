@@ -1,0 +1,133 @@
+
+@import '@/assets/scss/_main';
+
+body {
+    overflow: hidden;
+}
+
+.formScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-top: -60px;
+
+    .formItens {
+        display: flex;
+        flex-direction: column;
+
+        #bgInput {
+            border-radius: 10px;
+            padding: 15px 35px;
+            background-color: lighten($colorWhite, 5%);
+            border: none;
+            font-family: 'Roboto', sans-serif;
+            color: darken($colorGray, 20%);
+            resize: none;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+
+        .smlInputs {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 35px;
+
+            input[type="text"],
+            input[type="date"],
+            select {
+                border-radius: 30px;
+                padding: 15px 45px;
+                margin-bottom: 10px;
+                background-color: lighten($colorWhite, 5%);
+                border: none;
+                font-family: 'Roboto', sans-serif;
+                color: darken($colorGray, 20%);
+                font-size: 14px;
+            }
+
+            .selectInput {
+
+                select {
+
+                    background: url(https://www.reshot.com/preview-assets/icons/EUCMLYADT9/arrow-chevron-down-EUCMLYADT9.svg) no-repeat;
+                    background-position: right 19% top 50%;
+                    background-size: 15px;
+                    -moz-appearance: none; 
+                    -webkit-appearance: none;
+                    background-color: lighten($colorWhite, 5%);
+                    appearance: none;
+                    padding-right: 120px;
+
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.05);
+                        cursor: pointer;
+                    }   
+
+                    option {
+                        background-color: lighten($colorWhite, 5%);
+                    }
+                }
+            }
+
+            input[type="date"] {
+                cursor: text;
+            }
+
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                cursor: pointer;
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+            }
+
+            p {
+                margin-bottom: 10px;
+                color: darken($colorGray, 20%);
+                font-family: 'Raleway', sans-serif;
+            }
+        }
+    }
+
+    .footBtn {
+        display: flex;
+        flex-direction: row;
+        // margin-top: 60px;
+        justify-content: center;
+
+        #btnTrash {
+            color: $colorWhite;
+            background-color: $colorRed;
+            border: none;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            padding: 15px 15px;
+            margin-right: 18px;
+
+            &:hover {
+                background-color: darken($colorRed, 10%);
+                cursor: pointer;
+            }
+        }
+
+        #btnSave {
+            background-color: $colorBlue;
+            color: $colorWhite;
+            border: none;
+            padding: 15px 80px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken($colorBlue, 10%);
+                cursor: pointer;
+            }
+        }
+    }
+}

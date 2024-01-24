@@ -1,0 +1,156 @@
+
+@import '@/assets/scss/_main';
+
+header {
+    .topbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        border-radius: 10px;
+        margin: 0 15px;
+
+        h2 {
+          color: $colorBlack;
+        }
+
+        button {
+            border: none;
+            padding: 16px;
+            background-color: transparent;
+            transition: color 0.3s ease;
+          
+            i {
+              font-size: 20px;
+              color: $colorGray;
+              transition: color 0.3s ease;
+            }
+          
+            &:hover {
+              i {
+                color: rgba($colorBlack, 0.8);
+              }
+              cursor: pointer;
+            }
+        }   
+    }
+}
+
+main {
+    .screenContent {
+        // margin: 0 15px;
+    }
+}
+
+// MODAL
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  
+  .modal-wrapper {
+      min-width: 60%;
+      min-height: 60%;
+      padding: 20px 30px;
+      background-color: lighten( $colorWhite, 5%);
+      border-radius: 2px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+      transition: all 0.3s ease;
+      border-radius: 15px;
+
+      .modal-header {
+          margin-top: 0;
+          color: $colorBlack;
+          font-family: 'Roboto', sans-serif;
+          font-size: 19px;
+      }
+
+      .modal-line {
+          margin: 10px 0; /* Espaçamento para a nova linha */
+          border-top: 1px solid #ddd; /* Linha horizontal */
+      }
+
+      .modal-body {
+          margin: 20px 0;
+          font-family: 'Raleway', sans-serif;
+          font-size: 15px;
+
+          .persistData {
+            
+            button {
+                float: right;
+                margin-right: 5px;
+                padding: 10px;
+                border-radius: 15px;
+                transition: color 0.5s ease;
+                border: 1px solid $colorBlack;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .persistArea {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .bringArea {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+          }
+      }
+
+      .modal-footer {
+
+          .modal-default-button {
+              float: right;
+              margin-right: 5px;
+              padding: 10px;
+              border-radius: 15px;
+              transition: color 0.5s ease;
+              border: 1px solid $colorBlack;
+
+              &:hover{
+                cursor: pointer;
+                color: rgba($colorBlack, 0.5);
+            }
+          }
+
+          #modal-delete-btn {
+              background-color: $colorRed;
+              font-family: 'Roboto', sans-serif;
+
+              &:hover{
+                  cursor: pointer;
+                  color: rgba($colorBlack, 0.5);
+              }
+          }
+
+          #modal-cancel-btn {
+              margin-right: 15px;
+              background-color: $colorWhite;
+              font-family: 'Roboto', sans-serif;
+
+              &:hover{
+                  cursor: pointer;
+                  color: rgba($colorBlack, 0.8);
+              }
+          }
+      }
+  }   
+}
